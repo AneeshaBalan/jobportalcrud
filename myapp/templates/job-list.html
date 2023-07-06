@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Job List</h1>
+    <table>
+        <tr>
+            <th>id</th>
+        <th>UserName</th>
+        <th>qualification</th>
+        <th>Age</th>
+        <th>Experience</th>
+        <th>currenlty_working</th>
+        <th>Action</th>
+    </tr>
+    {%for j in jobs%}
+    <tr>
+        
+        <td>{{j.id}}</td>
+        <td>{{j.username}}</td>
+        <td>{{j.qualification}}</td>
+        <td>{{j.age}}</td>
+        <td>{{j.experience}}</td>
+        <td>{{j.currenlty_working}}</td>
+        <td><a href="{%url 'delete' j.id%}">delete</a></td>
+        <td><a href="{%url 'jobdetail' j.id%}">detail</a></td>
+        <td><a href="{%url 'change' j.id%}">update</a></td>
+       
+    </tr>
+    {%endfor%}
+    </table>
+    
+</body>
+</html>
